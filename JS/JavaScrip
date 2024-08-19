@@ -1,0 +1,88 @@
+document.addEventListener('DOMContentLoaded', function() {
+    const areaSection = document.getElementById('area-section');
+    const backEndSection = document.getElementById('back-end-section');
+    const frontEndSection = document.getElementById('front-end-section');
+    const decisionSection = document.getElementById('decision-section');
+    const resultSection = document.getElementById('result-section');
+    const technologiesSection = document.getElementById('technologies-section');
+
+    const nextAreaButton = document.getElementById('next-area');
+    const nextBackEndButton = document.getElementById('next-back-end');
+    const nextFrontEndButton = document.getElementById('next-front-end');
+    const showResultButton = document.getElementById('show-result');
+    const addTechnologiesButton = document.getElementById('add-technologies');
+
+    const technologiesList = document.getElementById('technologies-list');
+
+    nextAreaButton.addEventListener('click', function() {
+        const selectedArea = document.querySelector('input[name="area"]:checked');
+        if (selectedArea) {
+            areaSection.classList.add('hidden');
+            if (selectedArea.value === 'Back-End') {
+                backEndSection.classList.remove('hidden');
+            } else if (selectedArea.value === 'Front-End') {
+                frontEndSection.classList.remove('hidden');
+            }
+        } else {
+            alert('Por favor, selecciona un área.');
+        }
+    });
+
+    nextBackEndButton.addEventListener('click', function() {
+        const selectedBackEnd = document.querySelector('input[name="back-end"]:checked');
+        if (selectedBackEnd) {
+            backEndSection.classList.add('hidden');
+            decisionSection.classList.remove('hidden');
+        } else {
+            alert('Por favor, selecciona un lenguaje de Back-End.');
+        }
+    });
+
+    nextFrontEndButton.addEventListener('click', function() {
+        const selectedFrontEnd = document.querySelector('input[name="front-end"]:checked');
+        if (selectedFrontEnd) {
+            frontEndSection.classList.add('hidden');
+            decisionSection.classList.remove('hidden');
+        } else {
+            alert('Por favor, selecciona una tecnología de Front-End.');
+        }
+    });
+
+    showResultButton.addEventListener('click', function() {
+        const selectedDecision = document.querySelector('input[name="decision"]:checked');
+        const resultMessage = document.getElementById('result-message');
+
+        if (selectedDecision) {
+            if (selectedDecision.value === 'specialize') {
+                resultMessage.textContent = '¡Genial! Seguirás especializándote en el área elegida.';
+            } else if (selectedDecision.value === 'fullstack') {
+                resultMessage.textContent = '¡Excelente! Te convertirás en un desarrollador Fullstack.';
+            }
+            decisionSection.classList.add('hidden');
+            resultSection.classList.remove('hidden');
+        } else {
+            alert('Por favor, selecciona una opción.');
+        }
+    });
+
+    addTechnologiesButton.addEventListener('click', function() {
+        const technologies = [];
+        let moreTechnologies = true;
+
+        while (moreTechnologies) {
+            const tech = prompt('¿Hay alguna otra tecnología que te gustaría aprender?');
+            if (tech) {
+                technologies.push(tech);
+                const li = document.createElement('li');
+                li.textContent = tech;
+                technologiesList.appendChild(li);
+                alert(`¡Genial! Has añadido ${tech}.`);
+            }
+            moreTechnologies = confirm('¿Hay alguna otra tecnología que te gustaría aprender?');
+        }
+
+        if (technologies.length > 0) {
+            technologiesSection.classList.remove('hidden');
+        }
+    });
+});

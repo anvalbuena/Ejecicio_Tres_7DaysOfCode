@@ -1,0 +1,84 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Destinos Posibles</title>
+  <link href="CSS/estilos.css" rel="stylesheet">
+</head>
+<body>
+  <h1>Destinos Posibles</h1>
+  <form id="form">
+    <!-- Sección de Selección de Área -->
+    <fieldset id="area-section">
+      <legend>¿Quieres seguir al área de?</legend>
+      <label for="back-end">
+        <input type="radio" id="back-end" name="area" value="Back-End">
+        Back-End
+      </label>
+      <label for="front-end">
+        <input type="radio" id="front-end" name="area" value="Front-End">
+        Front-End
+      </label>
+      <button type="button" id="next-area">Siguiente</button>
+    </fieldset>
+
+    <!-- Sección de Back-End -->
+    <fieldset id="back-end-section" class="hidden">
+      <legend>¿Qué quieres aprender en Back-End?</legend>
+      <label for="java">
+        <input type="radio" id="java" name="back-end" value="Java">
+        Java
+      </label>
+      <label for="csharp">
+        <input type="radio" id="csharp" name="back-end" value="C#">
+        C#
+      </label>
+      <button type="button" id="next-back-end">Siguiente</button>
+    </fieldset>
+
+    <!-- Sección de Front-End -->
+    <fieldset id="front-end-section" class="hidden">
+      <legend>¿Qué quieres aprender en Front-End?</legend>
+      <label for="react">
+        <input type="radio" id="react" name="front-end" value="React">
+        React
+      </label>
+      <label for="vue">
+        <input type="radio" id="vue" name="front-end" value="Vue">
+        Vue
+      </label>
+      <button type="button" id="next-front-end">Siguiente</button>
+    </fieldset>
+
+    <!-- Sección de Decisión Final -->
+    <fieldset id="decision-section" class="hidden">
+      <legend>¿Qué te gustaría hacer ahora?</legend>
+      <label for="specialize">
+        <input type="radio" id="specialize" name="decision" value="specialize">
+        Seguir especializándote en el área elegida
+      </label>
+      <label for="fullstack">
+        <input type="radio" id="fullstack" name="decision" value="fullstack">
+        Convertirse en Fullstack
+      </label>
+      <button type="button" id="show-result">Mostrar Resultados</button>
+    </fieldset>
+
+    <!-- Sección de Resultados -->
+    <fieldset id="result-section" class="hidden">
+      <legend>Resultado</legend>
+      <p id="result-message"></p>
+      <button type="button" id="add-technologies">Añadir Tecnologías</button>
+    </fieldset>
+
+    <!-- Sección de Tecnologías -->
+    <fieldset id="technologies-section" class="hidden">
+      <legend>Tecnologías de Interés</legend>
+      <ul id="technologies-list"></ul>
+    </fieldset>
+  </form>
+
+  <script src="/JS/JavaScrip"></script>
+</body>
+</html>

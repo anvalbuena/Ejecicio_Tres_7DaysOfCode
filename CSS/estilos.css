@@ -1,0 +1,110 @@
+/* Estilos generales del cuerpo */
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 20px;
+    color: #333;
+    background-color: #f0f2f5;
+    line-height: 1.6;
+  }
+  
+  /* Oculta elementos */
+  .hidden {
+    display: none;
+  }
+  
+  /* Estilo para los fieldsets */
+  fieldset {
+    margin-bottom: 1.5em;
+    border: 1px solid #ddd;
+    padding: 1.5em;
+    border-radius: 10px;
+    background-color: #ffffff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    box-sizing: border-box;
+  }
+  
+  /* Estilo para los legendarios */
+  legend {
+    font-weight: bold;
+    font-size: 1.2em;
+    color: #333;
+    margin-bottom: 0.5em;
+    border-bottom: 2px solid #007bff;
+    padding-bottom: 0.5em;
+  }
+  
+  /* Estilo para las etiquetas */
+  label {
+    display: block;
+    margin-bottom: 0.5em;
+    cursor: pointer;
+    font-size: 1em;
+    color: #555;
+  }
+  
+  /* Estilo para los inputs de tipo radio */
+  input[type="radio"] {
+    margin-right: 0.5em;
+    cursor: pointer;
+  }
+  
+  /* Estilo para los botones */
+  button {
+    padding: 12px 24px;
+    font-size: 1em;
+    color: #fff;
+    background-color: #007bff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    display: inline-block;
+  }
+  
+  /* Estilo para el hover y el estado activo de los botones */
+  button:hover {
+    background-color: #0056b3;
+    transform: translateY(-2px);
+  }
+  
+  button:active {
+    background-color: #004494;
+    transform: translateY(0);
+  }
+  
+  /* Estilo para listas dentro de fieldsets */
+  ul {
+    padding-left: 20px;
+    list-style-type: disc;
+  }
+  
+  li {
+    margin-bottom: 0.5em;
+  }
+  
+  /* Media queries para hacer el diseño más responsivo */
+  @media (max-width: 600px) {
+    body {
+      padding: 10px;
+    }
+  
+    fieldset {
+      padding: 1em;
+    }
+  
+    button {
+      padding: 10px 20px;
+      font-size: 0.9em;
+    }
+  
+    legend {
+      font-size: 1.1em;
+    }
+  
+    label {
+      font-size: 0.9em;
+    }
+  }
+  
